@@ -14,3 +14,14 @@
 // the url below is the tutorial how to use the eventful api
 // https://api.eventful.com/tools/tutorials/search
 // here is the eventful url if you wanna check out the site to see if it would work for us http://charlotte.eventful.com/events
+
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDOkboNY8hDQINOTs70VB20lyrQccaemY0",
+    authDomain: "datenight-60047.firebaseapp.com",
+    databaseURL: "https://datenight-60047.firebaseio.com",
+    projectId: "datenight-60047",
+    storageBucket: "datenight-60047.appspot.com",
+    messagingSenderId: "445418868030"
+  };
+  firebase.initializeApp(config);
