@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>dateNight</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <body id="form-body">
+
+        <section class="section-options">
+            <p class="form-paragraph">Let us know ....</p>
+            <div class="options-list">
+                <form class="form-class">
+                    <div class="form-row">
+                        <div class="col-7">
+                            <input type="text" class="form-control" placeholder="City" required>
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="State" required>
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Zip" required>
+                        </div>
+                    </div>
+                    <select class="form-control form-control-lg">
+                        <option>Italian</option>
+                        <option>Seafood</option>
+                        <option>Mexican</option>
+                        <option>Steakhouse</option>
+                        <option>Indian</option>
+                        <option>Mediterranean</option>
+                        <option>Chinese</option>
+                        <option>Burgers</option>
+                        <option>American</option>
+                    </select>
+                    <select class="form-control form-control-lg">
+                        <option>$</option>
+                        <option>$$</option>
+                        <option>$$$</option>
+                        <option>$$$$</option>
+                    </select>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="surprise" id="surprise-radiobtn" value="option1" checked>
+                        <label class="form-check-label">
+                            Choose the movie for me
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>Movie Name:</label>
+                        <input type="text" class="form-control" id="movie-name-input">
+                    </div>
+                    <button type="submit" class="btn btn-outline-secondary" id="dinner-btn">Dinner</button>
+                    <button type="submit" class="btn btn-outline-secondary" id="movie-btn">Movie</button>
+                    <button type="submit" class="btn btn-outline-secondary" id="dinner-movie-btn">Dinner and Movie</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- JS and jQuery scripts -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="assets/javascript/app.js"></script>
+    </body>
+
+</html>

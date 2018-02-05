@@ -1,3 +1,44 @@
-#hello {
-    color: purple;
+
+/* index */
+
+#main{
+    background: linear-gradient(rgba(0,0,0,0.4),rgba(0, 0, 0, 0.4)), url(../images/background.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+.main-div{
+    height: 250px;
+    width: 500px;
+    margin-top: 100px;
+    margin-left: 25px;
+    background-color: #e9e5e515;  
+}
+
+.main-div p,
+.main-div h1,
+.main-div button{
+    position: relative;
+    left: 5%;
+    top:30px;
+    color:#afadad;
+}
+
+.main-div h1{
+    font-size: 60px;
+}
+
+/* form */
+
+#form-body{
+    background-image: url(../images/dust.png);
+}
+
+.form-paragraph{
+    margin-top: 3%;
+}
+
+.options-list{
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 5%;
 }
