@@ -15,6 +15,7 @@
 // https://api.eventful.com/tools/tutorials/search
 // here is the eventful url if you wanna check out the site to see if it would work for us http://charlotte.eventful.com/events
 
+
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyDOkboNY8hDQINOTs70VB20lyrQccaemY0",
@@ -65,3 +66,9 @@
       dateAdded: firebase.database.ServerValue.TIMESTAMP
     });
   });
+
+
+/* Fandango */
+var apiKeyFandango = mhphbgaayycwm9w3mnfw3b8r;
+var queryUrl = "http://api.fandango.com/v1/?op=theatersbymoviecitystatesearch&movietitle=" + titleMovie + " &city=" + city + "&state= " + state + "&apikey=" + apiKeyFandango; 
+
