@@ -2,7 +2,7 @@
 /* index */
 
 #main{
-    background: linear-gradient(rgba(0,0,0,0.4),rgba(0, 0, 0, 0.4)), url(../images/background.jpg) no-repeat center center fixed;
+    background: linear-gradient(rgba(0,0,0,0.1),rgba(0, 0, 0, 0.1)), url(../images/background.jpg) no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -35,10 +35,22 @@
 
 .form-paragraph{
     margin-top: 3%;
+    margin-left: 15%;
 }
 
 .options-list{
     width: 70%;
     margin-left: 15%;
     margin-top: 5%;
+}
+
+.form-c div,
+.form-c select,
+.form-c button {
+margin-top: 10px;
+margin-bottom: 10px;
+}
+
+.form-c button{
+    margin-right:20px;
 }
