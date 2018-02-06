@@ -19,16 +19,18 @@
                 <form class="form-class form-c">
                     <div class="form-row">
                         <div class="col-7">
-                            <input type="text" class="form-control" placeholder="City" required>
+                            <input type="text" class="form-control" id="city-input" placeholder="City" required>
                         </div>
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="State" required>
+                            <input type="text" class="form-control" id="state-input" placeholder="State" required>
                         </div>
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="Zip" required>
+                            <input type="text" class="form-control" id="zip-input" placeholder="Zip" required>
                         </div>
                     </div>
-                    <select class="form-control form-control">
+
+                    <select class="form-control form-control-lg" id="food-type-input">
+
                         <option>Italian</option>
                         <option>Seafood</option>
                         <option>Mexican</option>
@@ -39,7 +41,9 @@
                         <option>Burgers</option>
                         <option>American</option>
                     </select>
-                    <select class="form-control form-control">
+
+                    <select class="form-control form-control-lg" id="price-input">
+
                         <option>$</option>
                         <option>$$</option>
                         <option>$$$</option>

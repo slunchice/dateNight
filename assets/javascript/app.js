@@ -15,17 +15,60 @@
 // https://api.eventful.com/tools/tutorials/search
 // here is the eventful url if you wanna check out the site to see if it would work for us http://charlotte.eventful.com/events
 
-// Initialize Firebase
-var config = {
-  apiKey: "AIzaSyDOkboNY8hDQINOTs70VB20lyrQccaemY0",
-  authDomain: "datenight-60047.firebaseapp.com",
-  databaseURL: "https://datenight-60047.firebaseio.com",
-  projectId: "datenight-60047",
-  storageBucket: "datenight-60047.appspot.com",
-  messagingSenderId: "445418868030"
-};
-firebase.initializeApp(config);
+
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDOkboNY8hDQINOTs70VB20lyrQccaemY0",
+    authDomain: "datenight-60047.firebaseapp.com",
+    databaseURL: "https://datenight-60047.firebaseio.com",
+    projectId: "datenight-60047",
+    storageBucket: "datenight-60047.appspot.com",
+    messagingSenderId: "445418868030"
+  };
+
+  firebase.initializeApp(config);
+
+  var database = firebase.database();
+
+  var city = "";
+  var state = "";
+  var zip = "";
+  var foodType = "";
+  var price = "";
+  var movie = "";
+
+  $("#dinner-btn,#movie-btn,#dinner-movie-btn").on("click", function(event) {
+
+    event.preventDefault();
+
+    // store the values of the form inputs into the global variables above
+    city = $("#city-input").val().trim();
+    state = $("#state-input").val().trim();
+    zip = $("#zip-input").val().trim();
+    foodType = $("#food-type-input").val();
+    price = $("#price-input").val();
+    movie = $("#movie-name-input").val().trim();
+
+    // empty all inputs after submit is clicked
+    $("#city-input").val('');
+    $("#state-input").val('');
+    $("#zip-input").val('');
+    $("#movie-name-input").val('');
+
+    // pushing the value inputs of the variables to the firebase database
+    database.ref().push({
+      city: city,
+      state: state,
+      zip: zip,
+      foodType: foodType,
+      price: price,
+      movie: movie,
+      dateAdded: firebase.database.ServerValue.TIMESTAMP
+    });
+  });
+
 
 /* Fandango */
 var apiKeyFandango = mhphbgaayycwm9w3mnfw3b8r;
 var queryUrl = "http://api.fandango.com/v1/?op=theatersbymoviecitystatesearch&movietitle=" + titleMovie + " &city=" + city + "&state= " + state + "&apikey=" + apiKeyFandango; 
+
