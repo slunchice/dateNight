@@ -24,4 +24,44 @@
     storageBucket: "datenight-60047.appspot.com",
     messagingSenderId: "445418868030"
   };
+
   firebase.initializeApp(config);
+
+  var database = firebase.database();
+
+  var city = "";
+  var state = "";
+  var zip = "";
+  var foodType = "";
+  var price = "";
+  var movie = "";
+
+  $("#dinner-btn,#movie-btn,#dinner-movie-btn").on("click", function(event) {
+
+    event.preventDefault();
+
+    // store the values of the form inputs into the global variables above
+    city = $("#city-input").val().trim();
+    state = $("#state-input").val().trim();
+    zip = $("#zip-input").val().trim();
+    foodType = $("#food-type-input").val();
+    price = $("#price-input").val();
+    movie = $("#movie-name-input").val().trim();
+
+    // empty all inputs after submit is clicked
+    $("#city-input").val('');
+    $("#state-input").val('');
+    $("#zip-input").val('');
+    $("#movie-name-input").val('');
+
+    // pushing the value inputs of the variables to the firebase database
+    database.ref().push({
+      city: city,
+      state: state,
+      zip: zip,
+      foodType: foodType,
+      price: price,
+      movie: movie,
+      dateAdded: firebase.database.ServerValue.TIMESTAMP
+    });
+  });
