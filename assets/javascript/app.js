@@ -15,13 +15,30 @@
 // https://api.eventful.com/tools/tutorials/search
 // here is the eventful url if you wanna check out the site to see if it would work for us http://charlotte.eventful.com/events
 
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyDOkboNY8hDQINOTs70VB20lyrQccaemY0",
-    authDomain: "datenight-60047.firebaseapp.com",
-    databaseURL: "https://datenight-60047.firebaseio.com",
-    projectId: "datenight-60047",
-    storageBucket: "datenight-60047.appspot.com",
-    messagingSenderId: "445418868030"
-  };
-  firebase.initializeApp(config);
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyDOkboNY8hDQINOTs70VB20lyrQccaemY0",
+  authDomain: "datenight-60047.firebaseapp.com",
+  databaseURL: "https://datenight-60047.firebaseio.com",
+  projectId: "datenight-60047",
+  storageBucket: "datenight-60047.appspot.com",
+  messagingSenderId: "445418868030"
+};
+firebase.initializeApp(config);
+
+
+$("#dinner-btn").on("click",function () {
+
+  $.ajax({
+    url: "https://maps.googleapis.com/maps/api/distancematrix/json",
+    type: "GET",
+    data: {
+      origins: $("#origin").val(),
+      destination: $("#destinations").val(),
+      mode: "driving",
+      key: "AIzaSyB-aplqpn_ujYAps3nANbE2elanQzNQe7E"
+    }
+  }).done(function(response){
+      console.log(response);
+    });
+  });
