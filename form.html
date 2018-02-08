@@ -9,13 +9,17 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
     <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 
     <body id="form-body">
 
         <section class="section-options">
-            <p class="form-paragraph">Let us know ....</p>
-            <div class="options-list">
+            <div class="paragraph-container animated pulse">
+                    <h4 class="form-paragraph">Let us know ....</h4>
+            </div>
+            <div class="options-list animated pulse">
                 <form class="form-class form-c">
                     <div class="form-row">
                         <div class="col-7">
@@ -29,8 +33,7 @@
                         </div>
                     </div>
 
-                    <select class="form-control form-control-lg" id="food-type-input">
-
+                    <select class="form-control form-control" id="food-type-input">
                         <option>Italian</option>
                         <option>Seafood</option>
                         <option>Mexican</option>
@@ -42,8 +45,7 @@
                         <option>American</option>
                     </select>
 
-                    <select class="form-control form-control-lg" id="price-input">
-
+                    <select class="form-control form-control" id="price-input">
                         <option>$</option>
                         <option>$$</option>
                         <option>$$$</option>
@@ -51,14 +53,15 @@
                     </select>
                     <br>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="surprise" id="surprise-radiobtn" value="option1" checked>
+                        <input class="form-check-input" type="radio" name="chooseForme" id="chooseForMe-radiobtn" value="chooseForMe">
                         <label class="form-check-label">
                             Choose the movie for me
                         </label>
                     </div>
+                    <span>or</span>
                     <div class="form-group">
-                        <label>Movie Name:</label>
-                        <input type="text" class="form-control" id="movie-name-input">
+                        <!-- <label>Enter Movie Name:</label> -->
+                        <input type="text" class="form-control" id="movie-name-input" placeholder="Enter movie name">
                     </div>
                     <button type="submit" class="btn btn-outline-secondary" id="dinner-btn">Dinner</button>
                     <button type="submit" class="btn btn-outline-secondary" id="movie-btn">Movie</button>

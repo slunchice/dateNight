@@ -68,7 +68,16 @@
   });
 
 
-/* Fandango */
-var apiKeyFandango = mhphbgaayycwm9w3mnfw3b8r;
-var queryUrl = "http://api.fandango.com/v1/?op=theatersbymoviecitystatesearch&movietitle=" + titleMovie + " &city=" + city + "&state= " + state + "&apikey=" + apiKeyFandango; 
+// /* Fandango */
+// var apiKeyFandango = "mhphbgaayycwm9w3mnfw3b8r";
+// var titleMovie = "Titanic";
+// var city = "Charlotte";
+// var state = "North Carolina";
+// var queryUrlFandango = "http://api.fandango.com/v1/?op=theatersbymoviecitystatesearch&movietitle=" + titleMovie + " &city=" + city + "&state=" + state + "&apikey=" + apiKeyFandango; 
 
+// $.ajax({
+//   url: queryUrlFandango,
+//   method: 'GET'
+// }).done(function (response) {
+//        console.log(response);
+// });
