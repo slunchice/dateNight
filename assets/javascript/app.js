@@ -7,17 +7,6 @@
 // I believe the below url is what we link our api to when we search with our GET
 // https://api.yelp.com/v3/businesses/search
 
-// eventful api_____
-// fandango didnt have a public api anymore, I think eventful could be a better option since it does movies and other events like concerts too
-// I requested an api key and it is pasted in the line below
-// Key: xzCLvXpkc5JmtDcX
-// oAuth Consumer Key: 816473cca7cf91c2179c
-// oAuth Consumer Secret: 0576206826e568e4c041
-// the url below is the tutorial how to use the eventful api
-// https://api.eventful.com/tools/tutorials/search
-// here is the eventful url if you wanna check out the site to see if it would work for us http://charlotte.eventful.com/events
-// http://eventful.com/events?q=movies&l=Charlotte
-
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyDOkboNY8hDQINOTs70VB20lyrQccaemY0",
@@ -74,34 +63,24 @@
 // var apiKeyFandango = mhphbgaayycwm9w3mnfw3b8r;
 // var queryUrl = "http://api.fandango.com/v1/?op=theatersbymoviecitystatesearch&movietitle=" + titleMovie + " &city=" + city + "&state= " + state + "&apikey=" + apiKeyFandango; 
 
-function eventfulApi() {
 
-  var queryURL = "https://cors-anywhere.herokuapp.com/https://eventful.com/events?q=music&l=Charlotte&api_key=xzCLvXpkc5JmtDcX";
-
-  $.ajax({
-    url: queryURL,
-    method: "GET"
-    
-  }).done(function(response) {
-    console.log(response);
-  });
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://cors-anywhere.herokuapp.com/http://api.eventful.com/json/events/search?category=music&location=Charlotte&app_key=xzCLvXpkc5JmtDcX",
+  "method": "GET",
+  "headers": {
+    "Cache-Control": "no-cache",
+    "Postman-Token": "12218584-7ad2-68b9-0012-85aeef066241"
+  }
 }
 
-$(document).on("click", "#movie-btn", eventfulApi);
+$.ajax(settings).done(function (response) {
+  var res = JSON.parse(response);
+  console.log(res.events.event);
 
-
-
-
-function fandangoApi() {
-
-  var queryURL2 = "https://cors-anywhere.herokuapp.com/https://api.fandango.com/v1/?op=theatersbymoviecitystatesearch&movietitle=black-panther&city=charlotte&state=nc&apikey=mhphbgaayycwm9w3mnfw3b8r"
-
-  $.ajax({
-    url: queryURL2,
-    method: "GET"
-    
-  }).done(function(response) {
-    console.log(response);
-  });
-}
-$(document).on("click", "#dinner-btn", fandangoApi);
+  for(var i = 0; i < res.events.event.length; i++){
+   console.log(res.events.event[i].venue_name);
+  
+  }
+});
