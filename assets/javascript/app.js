@@ -29,16 +29,20 @@ firebase.initializeApp(config);
 
 $("#dinner-btn").on("click",function () {
 
-  $.ajax({
-    url: "https://maps.googleapis.com/maps/api/distancematrix/json",
-    type: "GET",
-    data: {
-      origins: $("#origin").val(),
-      destination: $("#destinations").val(),
-      mode: "driving",
-      key: "AIzaSyB-aplqpn_ujYAps3nANbE2elanQzNQe7E"
+  var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=28273",
+    "method": "GET",
+    "headers": {
+      "Authorization": "Bearer wN3yn1ihiVGsnXVjsnGISEGW6rhZ7AJfqW2u8ObXlcjpbZrXAWYts0tT0aRiJklporL0o9-AUPNVf7NQa4lylBavnTyuR3fQYfuGXRdSM9TdQzVglhCcH1-Blgx5WnYx",
+      "Cache-Control": "no-cache",
+      "Postman-Token": "dea27224-bbed-d7e2-3a99-17578a84c0a1"
     }
-  }).done(function(response){
-      console.log(response);
-    });
+  }
+  
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+    console.log(response.business.name);
+  });
   });
