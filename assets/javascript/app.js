@@ -10,11 +10,13 @@
 // eventful api_____
 // fandango didnt have a public api anymore, I think eventful could be a better option since it does movies and other events like concerts too
 // I requested an api key and it is pasted in the line below
-// xzCLvXpkc5JmtDcX
+// Key: xzCLvXpkc5JmtDcX
+// oAuth Consumer Key: 816473cca7cf91c2179c
+// oAuth Consumer Secret: 0576206826e568e4c041
 // the url below is the tutorial how to use the eventful api
 // https://api.eventful.com/tools/tutorials/search
 // here is the eventful url if you wanna check out the site to see if it would work for us http://charlotte.eventful.com/events
-
+// http://eventful.com/events?q=movies&l=Charlotte
 
   // Initialize Firebase
   var config = {
@@ -69,6 +71,37 @@
 
 
 /* Fandango */
-var apiKeyFandango = mhphbgaayycwm9w3mnfw3b8r;
-var queryUrl = "http://api.fandango.com/v1/?op=theatersbymoviecitystatesearch&movietitle=" + titleMovie + " &city=" + city + "&state= " + state + "&apikey=" + apiKeyFandango; 
+// var apiKeyFandango = mhphbgaayycwm9w3mnfw3b8r;
+// var queryUrl = "http://api.fandango.com/v1/?op=theatersbymoviecitystatesearch&movietitle=" + titleMovie + " &city=" + city + "&state= " + state + "&apikey=" + apiKeyFandango; 
 
+function eventfulApi() {
+
+  var queryURL = "https://cors-anywhere.herokuapp.com/https://eventful.com/events?q=music&l=Charlotte&api_key=xzCLvXpkc5JmtDcX";
+
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+    
+  }).done(function(response) {
+    console.log(response);
+  });
+}
+
+$(document).on("click", "#movie-btn", eventfulApi);
+
+
+
+
+function fandangoApi() {
+
+  var queryURL2 = "https://cors-anywhere.herokuapp.com/https://api.fandango.com/v1/?op=theatersbymoviecitystatesearch&movietitle=black-panther&city=charlotte&state=nc&apikey=mhphbgaayycwm9w3mnfw3b8r"
+
+  $.ajax({
+    url: queryURL2,
+    method: "GET"
+    
+  }).done(function(response) {
+    console.log(response);
+  });
+}
+$(document).on("click", "#dinner-btn", fandangoApi);
