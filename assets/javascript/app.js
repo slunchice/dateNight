@@ -79,7 +79,8 @@ var state = "";
 var zip = "";
 var foodType = "";
 var price = "";
-var movie = "";
+var event = "";
+var when = "";
 
 $("#dinner-btn,#movie-btn,#dinner-movie-btn").on("click", function(event) {
 
@@ -91,13 +92,13 @@ $("#dinner-btn,#movie-btn,#dinner-movie-btn").on("click", function(event) {
   zip = $("#zip-input").val().trim();
   foodType = $("#food-type-input").val();
   price = $("#price-input").val();
-  movie = $("#movie-name-input").val().trim();
+  event = $("#event-input").val();
+  when = $("#when-input").val();
 
   // empty all inputs after submit is clicked
   $("#city-input").val('');
   $("#state-input").val('');
   $("#zip-input").val('');
-  $("#movie-name-input").val('');
 
   // pushing the value inputs of the variables to the firebase database
   database.ref().push({
@@ -106,7 +107,8 @@ $("#dinner-btn,#movie-btn,#dinner-movie-btn").on("click", function(event) {
     zip: zip,
     foodType: foodType,
     price: price,
-    movie: movie,
+    event: event,
+    when: when,
     dateAdded: firebase.database.ServerValue.TIMESTAMP
   });
 });
