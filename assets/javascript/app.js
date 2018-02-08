@@ -1,83 +1,113 @@
 
 // yelp api_____
-// I requested an api key and it is pasted in the line below
 // bcs2fOhux1UxgJZYOjtqrLNWDZ6vNIgGrG_ESgiA64aFLubG3z7uL5vFvTMqn5onZA8hqGZse6UiSqlB0oLm5UIjzjXUfqCsqLI63vCJhjJSQW84sTBBy-v9A8lzWnYx
-// not sure if we need client ID but its pasted below
-// rB_Ksk_aj6pA6fD1QKzXIw
-// I believe the below url is what we link our api to when we search with our GET
-// https://api.yelp.com/v3/businesses/search
+
 
 // eventful api_____
-// fandango didnt have a public api anymore, I think eventful could be a better option since it does movies and other events like concerts too
-// I requested an api key and it is pasted in the line below
-// xzCLvXpkc5JmtDcX
-// the url below is the tutorial how to use the eventful api
-// https://api.eventful.com/tools/tutorials/search
-// here is the eventful url if you wanna check out the site to see if it would work for us http://charlotte.eventful.com/events
+// Key: xzCLvXpkc5JmtDcX
 
 
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyDOkboNY8hDQINOTs70VB20lyrQccaemY0",
-    authDomain: "datenight-60047.firebaseapp.com",
-    databaseURL: "https://datenight-60047.firebaseio.com",
-    projectId: "datenight-60047",
-    storageBucket: "datenight-60047.appspot.com",
-    messagingSenderId: "445418868030"
-  };
+// yelp ajax api call - rori
+$("#dinner-btn").on("click",function () {
 
-  firebase.initializeApp(config);
-
-  var database = firebase.database();
-
-  var city = "";
-  var state = "";
-  var zip = "";
-  var foodType = "";
-  var price = "";
-  var movie = "";
-
-  $("#dinner-btn,#movie-btn,#dinner-movie-btn").on("click", function(event) {
-
-    event.preventDefault();
-
-    // store the values of the form inputs into the global variables above
-    city = $("#city-input").val().trim();
-    state = $("#state-input").val().trim();
-    zip = $("#zip-input").val().trim();
-    foodType = $("#food-type-input").val();
-    price = $("#price-input").val();
-    movie = $("#movie-name-input").val().trim();
-
-    // empty all inputs after submit is clicked
-    $("#city-input").val('');
-    $("#state-input").val('');
-    $("#zip-input").val('');
-    $("#movie-name-input").val('');
-
-    // pushing the value inputs of the variables to the firebase database
-    database.ref().push({
-      city: city,
-      state: state,
-      zip: zip,
-      foodType: foodType,
-      price: price,
-      movie: movie,
-      dateAdded: firebase.database.ServerValue.TIMESTAMP
-    });
+  var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=28273",
+    "method": "GET",
+    "headers": {
+      "Authorization": "Bearer wN3yn1ihiVGsnXVjsnGISEGW6rhZ7AJfqW2u8ObXlcjpbZrXAWYts0tT0aRiJklporL0o9-AUPNVf7NQa4lylBavnTyuR3fQYfuGXRdSM9TdQzVglhCcH1-Blgx5WnYx",
+      "Cache-Control": "no-cache",
+      "Postman-Token": "dea27224-bbed-d7e2-3a99-17578a84c0a1"
+    }
+  }
+  
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+    // added a loop to select specific targets within the object
+    for(var i = 0; i < response.businesses.length; i++){
+    // console logging the business names for example
+    console.log(response.businesses[i].name);
+    }
   });
+});
 
 
-// /* Fandango */
-// var apiKeyFandango = "mhphbgaayycwm9w3mnfw3b8r";
-// var titleMovie = "Titanic";
-// var city = "Charlotte";
-// var state = "North Carolina";
-// var queryUrlFandango = "http://api.fandango.com/v1/?op=theatersbymoviecitystatesearch&movietitle=" + titleMovie + " &city=" + city + "&state=" + state + "&apikey=" + apiKeyFandango; 
+// eventful ajax api call - donald
+function eventful() {
+  var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://cors-anywhere.herokuapp.com/http://api.eventful.com/json/events/search?category=music&location=Charlotte&app_key=xzCLvXpkc5JmtDcX",
+    "method": "GET",
+    "headers": {
+      "Cache-Control": "no-cache",
+      "Postman-Token": "12218584-7ad2-68b9-0012-85aeef066241"
+    }
+  }
 
-// $.ajax({
-//   url: queryUrlFandango,
-//   method: 'GET'
-// }).done(function (response) {
-//        console.log(response);
-// });
+  $.ajax(settings).done(function (response) {
+    // turning string into object and storing in variable res
+    var res = JSON.parse(response);
+    console.log(res.events.event);
+
+    // looping through the array and return the events within the object
+    for(var i = 0; i < res.events.event.length; i++){
+    console.log(res.events.event[i].venue_name);
+    
+    }
+  });
+}
+
+
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyDOkboNY8hDQINOTs70VB20lyrQccaemY0",
+  authDomain: "datenight-60047.firebaseapp.com",
+  databaseURL: "https://datenight-60047.firebaseio.com",
+  projectId: "datenight-60047",
+  storageBucket: "datenight-60047.appspot.com",
+  messagingSenderId: "445418868030"
+};
+
+firebase.initializeApp(config);
+
+var database = firebase.database();
+
+var city = "";
+var state = "";
+var zip = "";
+var foodType = "";
+var price = "";
+var movie = "";
+
+$("#dinner-btn,#movie-btn,#dinner-movie-btn").on("click", function(event) {
+
+  event.preventDefault();
+
+  // store the values of the form inputs into the global variables above
+  city = $("#city-input").val().trim();
+  state = $("#state-input").val().trim();
+  zip = $("#zip-input").val().trim();
+  foodType = $("#food-type-input").val();
+  price = $("#price-input").val();
+  movie = $("#movie-name-input").val().trim();
+
+  // empty all inputs after submit is clicked
+  $("#city-input").val('');
+  $("#state-input").val('');
+  $("#zip-input").val('');
+  $("#movie-name-input").val('');
+
+  // pushing the value inputs of the variables to the firebase database
+  database.ref().push({
+    city: city,
+    state: state,
+    zip: zip,
+    foodType: foodType,
+    price: price,
+    movie: movie,
+    dateAdded: firebase.database.ServerValue.TIMESTAMP
+  });
+});
+
