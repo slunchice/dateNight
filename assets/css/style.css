@@ -1,17 +1,27 @@
 
+/* General */
+
+#main-body,
+#form-body,
+#respond-body{
+    font-family: 'Montserrat', sans-serif;
+    /* color: #313030; */
+    font-size: 20px;
+}
+
 /* index */
 
-#main{
-    background: linear-gradient(rgba(0,0,0,0.1),rgba(0, 0, 0, 0.1)), url(../images/background.jpg) no-repeat center center fixed;
+#main-body{
+    background: linear-gradient(rgba(0,0,0,0.2),rgba(0, 0, 0, 0.2)), url(../images/romantic.jpg) no-repeat center center fixed;
     background-size: cover;
 }
 
 .main-div{
     height: 250px;
-    width: 500px;
+    width: 470px;
     margin-top: 100px;
     margin-left: 25px;
-    background-color: #e9e5e515;  
+    background-color: #e9e5e525;
 }
 
 .main-div p,
@@ -20,41 +30,65 @@
     position: relative;
     left: 5%;
     top:30px;
-    color:#afadad;
+    color:#f8f5f5;
 }
 
 .main-div h1{
     font-size: 60px;
 }
 
+
 /* form */
 
 #form-body{
-    background-image: url(../images/dust.png);
+    /* background-image: url(../images/romantic.jpg);  */
+    background: url(../images/background.jpg) no-repeat center center fixed;
+    background-size: cover;
 }
 
-#respond-body{
-    background-image: url(../images/dust.png);
+.paragraph-container{
+    background-color: #e9e5e531;
+    width: 30%;
+    margin-left: 13%;
+    margin-top: 3%;
+    padding:3px;
 }
 
 .form-paragraph{
     margin-top: 3%;
     margin-left: 15%;
+    color:#f8f5f5;
 }
 
 .options-list{
-    width: 70%;
-    margin-left: 15%;
+    background-color: #e9e5e58c;
+    width: 74%;
+    margin-top: 100px;
+    margin-left: 13%; 
+    color:#5e5b5b;
+}
+
+.form-c{
+    width: 90%;
+    margin-left: 5%;
     margin-top: 5%;
+    padding: 20px;
 }
 
 .form-c div,
-.form-c select,
-.form-c button {
+.form-c select{
 margin-top: 10px;
 margin-bottom: 10px;
 }
 
 .form-c button{
     margin-right:20px;
+    margin-top: 20px;
+}
+
+
+/* Responde */
+
+#respond-body{
+    background-image: url(../images/dust.png);
 }
