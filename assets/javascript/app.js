@@ -132,7 +132,3 @@ $("#dinner-btn,#movie-btn,#dinner-movie-btn").on("click", function(event) {
 
 });
 
-
-
-
-
