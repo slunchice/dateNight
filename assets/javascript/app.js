@@ -67,10 +67,9 @@ function eventful() {
       var eventUrl = res.events.event[i].url;
       console.log(res.events.event[i].url);
 
-      var eventImage = res.events.event[i].image.medium.url;
-      console.log(res.events.event[i].image.medium.url);
+      // var eventImage = res.events.event[i].image.medium.url;
+      // console.log(res.events.event[i].image.medium.url);
 
-      $("#event-title-output").html(eventTitle);
     }
   });
 }
