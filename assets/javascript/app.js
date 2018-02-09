@@ -8,8 +8,7 @@
 
 
 // yelp ajax api call - rori
-$("#dinner-btn").on("click",function () {
-
+function yelp() {
   var settings = {
     "async": true,
     "crossDomain": true,
@@ -25,12 +24,14 @@ $("#dinner-btn").on("click",function () {
   $.ajax(settings).done(function (response) {
     console.log(response);
     // added a loop to select specific targets within the object
-    for(var i = 0; i < response.businesses.length; i++){
+    for(var i = 0; i < 5; i++){
     // console logging the business names for example
     console.log(response.businesses[i].name);
     }
   });
-});
+}
+// only run the yelp api function when food and food&fun button is clicked, not fun only button
+$(document).on("click", "#dinner-btn,#dinner-movie-btn", yelp);
 
 
 // eventful ajax api call - donald
@@ -38,7 +39,7 @@ function eventful() {
   var settings = {
     "async": true,
     "crossDomain": true,
-    "url": "https://cors-anywhere.herokuapp.com/http://api.eventful.com/json/events/search?category=music&location=Charlotte&app_key=xzCLvXpkc5JmtDcX",
+    "url": "https://cors-anywhere.herokuapp.com/http://api.eventful.com/json/events/search?category=" + eventChoice + "&when=" + when + "&location=" + city + "&app_key=xzCLvXpkc5JmtDcX",
     "method": "GET",
     "headers": {
       "Cache-Control": "no-cache",
@@ -53,11 +54,28 @@ function eventful() {
 
     // looping through the array and return the events within the object
     for(var i = 0; i < res.events.event.length; i++){
-    console.log(res.events.event[i].venue_name);
+
+      var eventTitle = res.events.event[i].title;
+      console.log(res.events.event[i].title);
     
+      var eventVenueName = res.events.event[i].venue_name;
+      console.log(res.events.event[i].venue_name);
+
+      var eventVenueAddress = res.events.event[i].venue_address;
+      console.log(res.events.event[i].venue_address);
+
+      var eventUrl = res.events.event[i].url;
+      console.log(res.events.event[i].url);
+
+      var eventImage = res.events.event[i].image.medium.url;
+      console.log(res.events.event[i].image.medium.url);
+
+      $("#event-title-output").html(eventTitle);
     }
   });
 }
+// only run the eventful api function when fun and food&fun button is clicked, not food only button
+$(document).on("click", "#movie-btn,#dinner-movie-btn", eventful);
 
 
 // Initialize Firebase
@@ -79,7 +97,7 @@ var state = "";
 var zip = "";
 var foodType = "";
 var price = "";
-var event = "";
+var eventChoice = "";
 var when = "";
 
 $("#dinner-btn,#movie-btn,#dinner-movie-btn").on("click", function(event) {
@@ -92,14 +110,15 @@ $("#dinner-btn,#movie-btn,#dinner-movie-btn").on("click", function(event) {
   zip = $("#zip-input").val().trim();
   foodType = $("#food-type-input").val();
   price = $("#price-input").val();
-  event = $("#event-input").val();
+  eventChoice = $("#event-input").val();
   when = $("#when-input").val();
 
   // empty all inputs after submit is clicked
   $("#city-input").val('');
   $("#state-input").val('');
   $("#zip-input").val('');
-
+  
+  
   // pushing the value inputs of the variables to the firebase database
   database.ref().push({
     city: city,
@@ -107,9 +126,10 @@ $("#dinner-btn,#movie-btn,#dinner-movie-btn").on("click", function(event) {
     zip: zip,
     foodType: foodType,
     price: price,
-    event: event,
+    eventChoice: eventChoice,
     when: when,
     dateAdded: firebase.database.ServerValue.TIMESTAMP
   });
+
 });
 
