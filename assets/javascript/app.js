@@ -12,7 +12,7 @@ function yelp() {
   var settings = {
     "async": true,
     "crossDomain": true,
-    "url": "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=" + city + "&location=" + state + "&term=" + foodType,
+    "url": "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=" + city + "&term=" + foodType,
     "method": "GET",
     "headers": {
       "Authorization": "Bearer wN3yn1ihiVGsnXVjsnGISEGW6rhZ7AJfqW2u8ObXlcjpbZrXAWYts0tT0aRiJklporL0o9-AUPNVf7NQa4lylBavnTyuR3fQYfuGXRdSM9TdQzVglhCcH1-Blgx5WnYx",
@@ -33,7 +33,7 @@ function yelp() {
     console.log(response.businesses[i].image_url);
 
     var restaurantRating = response.businesses[i].rating;
-    console.log("Rating" + response.businesses[i].rating);
+    console.log("Rating " + response.businesses[i].rating);
 
     // var restaurantUrl = response.businesses[i].rating;
     // console.log(response.businesses[i].url);
