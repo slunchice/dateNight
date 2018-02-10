@@ -79,6 +79,11 @@ function eventful() {
 
       // var eventImage = res.events.event[i].image.medium.url;
       // console.log(res.events.event[i].image.medium.url);
+     
+      $(".img-class").append();
+      $(".info-title-class").append(eventTitle);
+      $(".info-class").append(eventVenueName,eventVenueAddress,eventUrl);
+
 
     }
   });
