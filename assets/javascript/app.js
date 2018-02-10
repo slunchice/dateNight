@@ -33,10 +33,10 @@ function yelp() {
     console.log(response.businesses[i].image_url);
 
     var restaurantRating = response.businesses[i].rating;
-    console.log("Rating " + response.businesses[i].rating);
+    console.log("Rating: " + response.businesses[i].rating);
 
-    // var restaurantUrl = response.businesses[i].rating;
-    // console.log(response.businesses[i].url);
+    var restaurantUrl = response.businesses[i].url;
+    console.log(response.businesses[i].url);
     }
   });
 }
