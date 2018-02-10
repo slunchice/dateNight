@@ -12,12 +12,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/pushy-buttons.css">
+    
 
     <body id="form-body">
 
         <section class="section-options">
             <div class="paragraph-container animated pulse">
-                    <h4 class="form-paragraph">Let us know ....</h4>
+                    <h4 class="form-paragraph">The Details</h4>
             </div>
             <div class="options-list animated pulse">
                 <form class="form-class form-c">
@@ -28,9 +30,9 @@
                         <div class="col">
                             <input type="text" class="form-control" id="state-input" placeholder="State" required>
                         </div>
-                        <div class="col">
+                        <!-- <div class="col">
                             <input type="text" class="form-control" id="zip-input" placeholder="Zip" required>
-                        </div>
+                        </div> -->
                     </div>
 
                     <select class="form-control form-control" id="food-type-input">
@@ -75,9 +77,13 @@
                             <option>this weekend</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-outline-secondary" id="dinner-btn">Food</button>
+                    <button class="btn btn--sm btn--blue" id="dinner-btn">Food</button>
+                    <button class="btn btn--sm btn--blue" id="movie-btn">Fun</button>
+                    <button class="btn btn--sm btn--blue" id="dinner-movie-btn">Food and Fun</button>
+                    <!-- old buttons -->
+                    <!-- <button type="submit" class="btn btn-outline-secondary" id="dinner-btn">Food</button>
                     <button type="submit" class="btn btn-outline-secondary" id="movie-btn">Fun</button>
-                    <button type="submit" class="btn btn-outline-secondary" id="dinner-movie-btn">Food and Fun</button>
+                    <button type="submit" class="btn btn-outline-secondary" id="dinner-movie-btn">Food and Fun</button> -->
                 </form>
             </div>
         </section>
