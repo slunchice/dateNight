@@ -62,12 +62,14 @@ function eventful() {
     var res = JSON.parse(response);
     console.log(res.events.event);
 
+
     // looping through the array and return the events within the object
     for(var i = 0; i < res.events.event.length; i++){
 
       var eventTitle = res.events.event[i].title;
       console.log(res.events.event[i].title);
-    
+      $(".eventName").append(eventTitle);
+
       var eventVenueName = res.events.event[i].venue_name;
       console.log(res.events.event[i].venue_name);
 
@@ -142,3 +144,13 @@ $("#dinner-btn,#movie-btn,#dinner-movie-btn").on("click", function(event) {
 
 });
 
+$(document).ready(function(){  
+  for(var i=0 ; i< m.length ; i++) {
+    $('<div class="item"><img src="'+m[i]+'"><div class="carousel-caption"></div>   </div>').appendTo('.carousel-inner');
+    $('<li data-target="#carousel-example-generic" data-slide-to="'+i+'"></li>').appendTo('.carousel-indicators')
+
+  }
+  $('.item').first().addClass('active');
+  $('.carousel-indicators > li').first().addClass('active');
+  $('#carousel-example-generic').carousel();
+});

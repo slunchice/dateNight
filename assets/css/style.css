@@ -63,6 +63,7 @@
 
 /* form */
 
+#respond-body,
 #form-body{
     /* background-image: url(../images/romantic.jpg);  */
     background: url(../images/bar-city.jpg) no-repeat center center fixed;
@@ -113,5 +114,6 @@ margin-bottom: 10px;
 /* Responde */
 
 #respond-body{
+    
     /* background-image: url(../images/dust.png); */
 }
