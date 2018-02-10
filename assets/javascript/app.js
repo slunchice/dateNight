@@ -33,10 +33,10 @@ function yelp() {
     console.log(response.businesses[i].image_url);
 
     var restaurantRating = response.businesses[i].rating;
-    console.log("Rating" + response.businesses[i].rating);
+    console.log("Rating: " + response.businesses[i].rating);
 
-    // var restaurantUrl = response.businesses[i].rating;
-    // console.log(response.businesses[i].url);
+    var restaurantUrl = response.businesses[i].url;
+    console.log(response.businesses[i].url);
     }
   });
 }
@@ -79,8 +79,16 @@ function eventful() {
       var eventUrl = res.events.event[i].url;
       console.log(res.events.event[i].url);
 
+      var eventTime = res.events.event[i].start_time;
+      console.log(res.events.event[i].start_time);
+
       // var eventImage = res.events.event[i].image.medium.url;
       // console.log(res.events.event[i].image.medium.url);
+     
+      $(".img-class").append();
+      $(".info-title-class").append(eventTitle);
+      $(".info-class").append(eventVenueName,eventVenueAddress,eventUrl);
+
 
     }
   });
