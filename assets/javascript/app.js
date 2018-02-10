@@ -103,7 +103,7 @@ var database = firebase.database();
 
 var city = "";
 var state = "";
-var zip = "";
+// var zip = "";
 var foodType = "";
 var price = "";
 var eventChoice = "";
@@ -116,7 +116,7 @@ $("#dinner-btn,#movie-btn,#dinner-movie-btn").on("click", function(event) {
   // store the values of the form inputs into the global variables above
   city = $("#city-input").val().trim();
   state = $("#state-input").val().trim();
-  zip = $("#zip-input").val().trim();
+  // zip = $("#zip-input").val().trim();
   foodType = $("#food-type-input").val();
   price = $("#price-input").val();
   eventChoice = $("#event-input").val();
@@ -132,7 +132,7 @@ $("#dinner-btn,#movie-btn,#dinner-movie-btn").on("click", function(event) {
   database.ref().push({
     city: city,
     state: state,
-    zip: zip,
+    // zip: zip,
     foodType: foodType,
     price: price,
     eventChoice: eventChoice,

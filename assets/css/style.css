@@ -11,7 +11,30 @@
 
 /* index */
 
+@font-face {
+    font-family: myFirstFont;
+    src: url("../images/Stay Wildy.ttf");
+}
 #main-body{
+    background: url(../images/city-night.jpg) no-repeat center center fixed;
+    background-size: cover;
+    text-align: center;
+}
+
+#header {
+    color: white;
+    font-size: 200px;
+    margin-top: 20px;
+    font-family: myFirstFont;
+}
+
+#date-night-button {
+    color: white;
+    margin-top: 20px;
+}
+
+/* old front page css */
+/* #main-body{
     background: linear-gradient(rgba(0,0,0,0.2),rgba(0, 0, 0, 0.2)), url(../images/romantic.jpg) no-repeat center center fixed;
     background-size: cover;
 }
@@ -35,14 +58,14 @@
 
 .main-div h1{
     font-size: 60px;
-}
+} */
 
 
 /* form */
 
 #form-body{
     /* background-image: url(../images/romantic.jpg);  */
-    background: url(../images/background.jpg) no-repeat center center fixed;
+    background: url(../images/bar-city.jpg) no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -63,7 +86,7 @@
 .options-list{
     background-color: #e9e5e58c;
     width: 74%;
-    margin-top: 100px;
+    margin-top: 20px;
     margin-left: 13%; 
     color:#5e5b5b;
 }
@@ -90,5 +113,5 @@ margin-bottom: 10px;
 /* Responde */
 
 #respond-body{
-    background-image: url(../images/dust.png);
+    /* background-image: url(../images/dust.png); */
 }
