@@ -65,7 +65,7 @@
 
 #form-body{
     /* background-image: url(../images/romantic.jpg);  */
-    background: url(../images/bar-city.jpg) no-repeat center center fixed;
+    background: url(../images/concert2.jpeg) no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -113,5 +113,9 @@ margin-bottom: 10px;
 /* Responde */
 
 #respond-body{
-    /* background-image: url(../images/dust.png); */
+    background-image: url(../images/purple-gradient.jpeg);
+}
+
+.section-results {
+    text-align: center;
 }
