@@ -40,6 +40,7 @@ function yelp() {
     }
   });
 }
+
 // only run the yelp api function when food and food&fun button is clicked, not fun only button
 $(document).on("click", "#dinner-btn,#dinner-movie-btn", yelp);
 
@@ -84,10 +85,6 @@ function eventful() {
 
       // var eventImage = res.events.event[i].image.medium.url;
       // console.log(res.events.event[i].image.medium.url);
-     
-      $(".img-class").append();
-      $(".info-title-class").append(eventTitle);
-      $(".info-class").append(eventVenueName,eventVenueAddress,eventUrl);
 
 
     }
@@ -150,15 +147,4 @@ $("#dinner-btn,#movie-btn,#dinner-movie-btn").on("click", function(event) {
     dateAdded: firebase.database.ServerValue.TIMESTAMP
   });
 
-});
-
-$(document).ready(function(){  
-  for(var i=0 ; i< m.length ; i++) {
-    $('<div class="item"><img src="'+m[i]+'"><div class="carousel-caption"></div>   </div>').appendTo('.carousel-inner');
-    $('<li data-target="#carousel-example-generic" data-slide-to="'+i+'"></li>').appendTo('.carousel-indicators')
-
-  }
-  $('.item').first().addClass('active');
-  $('.carousel-indicators > li').first().addClass('active');
-  $('#carousel-example-generic').carousel();
 });
