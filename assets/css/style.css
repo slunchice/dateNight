@@ -29,7 +29,7 @@
 }
 
 #date-night-button {
-    color: white;
+    /* color: white; */
     margin-top: 20px;
 }
 
@@ -101,7 +101,7 @@
 
 .form-c div,
 .form-c select{
-margin-top: 10px;
+margin-top: 5px;
 margin-bottom: 10px;
 }
 
@@ -109,6 +109,79 @@ margin-bottom: 10px;
     margin-right:20px;
     margin-top: 20px;
 }
+
+#carousel-container {
+    margin-bottom: 20px;
+    background-color:black; 
+    margin-top:10px;
+    padding-bottom: 20px;
+}
+
+#yelpCarousel {
+    height: 500px;
+    background-color: black;
+    margin-bottom: 20px;
+}
+
+#eventfulCarousel {
+    height: 500px;
+    background-color: black;
+}
+
+#yelpCarousel img {
+    max-width: 275px;
+    max-height: 275px;
+    padding-top: 20px;
+}
+
+#eventfulCarousel img {
+    max-width: 275px;
+    max-height: 275px;
+    padding-top: 20px;
+}
+
+.carousel-caption-1 h3 {
+    color: white;
+    text-align: center;
+}
+.carousel-caption-2 h3 {
+    color: white;
+    text-align: center;
+}
+.carousel-caption-3 h3 {
+    color: white;
+    text-align: center;
+}
+.carousel-caption-4 h3 {
+    color: white;
+    text-align: center;
+}
+.carousel-caption-5 h3 {
+    color: white;
+    text-align: center;
+}
+
+.carousel-caption-1B h3 {
+    color: white;
+    text-align: center;
+}
+.carousel-caption-2B h3 {
+    color: white;
+    text-align: center;
+}
+.carousel-caption-3B h3 {
+    color: white;
+    text-align: center;
+}
+.carousel-caption-4B h3 {
+    color: white;
+    text-align: center;
+}
+.carousel-caption-5B h3 {
+    color: white;
+    text-align: center;
+}
+
 
 
 /* Responde */

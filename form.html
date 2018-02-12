@@ -6,91 +6,210 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>dateNight</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>         
     <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/pushy-buttons.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <style>
+        .carousel-inner>.item>img,
+        .carousel-inner>.item>a>img {
+            width: 70%;
+            margin: auto;
+        }
+    </style>
+</head>
     
 
-    <body id="form-body">
+<body id="form-body">
 
-        <section class="section-options">
-            <div class="paragraph-container animated pulse">
-                    <h4 class="form-paragraph">The Details</h4>
-            </div>
-            <div class="options-list animated pulse">
-                <form class="form-class form-c">
-                    <div class="form-row">
-                        <div class="col-7">
-                            <input type="text" class="form-control" id="city-input" placeholder="City" required>
-                        </div>
-                        <div class="col">
-                            <input type="text" class="form-control" id="state-input" placeholder="State" required>
-                        </div>
-                        <!-- <div class="col">
-                            <input type="text" class="form-control" id="zip-input" placeholder="Zip" required>
-                        </div> -->
+    <div class="section-options">
+        
+        <div class="options-list animated pulse">
+            <form class="form-class form-c">
+                <label>Where:</label>
+                <div class="form-row">
+                    <div class="col-7">
+                        <input type="text" class="form-control" id="city-input" placeholder="City" required>
                     </div>
-
-                    <select class="form-control form-control" id="food-type-input">
-                        <option>Sushi</option>
-                        <option>Italian</option>
-                        <option>Mexican</option>
-                        <option>Burgers</option>
-                        <option>Pizza</option>
-                        <option>Indian</option>
-                        <option>Mediterranean</option>
-                        <option>Seafood</option>
-                        <option>Steakhouse</option>
-                        <option>Chinese</option>
-                        <option>American</option>
-                    </select>
-
-                    <select class="form-control form-control" id="price-input">
-                        <option>$</option>
-                        <option>$$</option>
-                        <option>$$$</option>
-                        <option>$$$$</option>
-                    </select>
-                    <br>
-                    <!-- <div class="form-check">
-                        <input class="form-check-input" type="radio" name="surprise" id="surprise-radiobtn" value="option1" checked>
-                        <label class="form-check-label">
-                            Choose the movie for me
-                        </label>
+                    <div class="col">
+                        <input type="text" class="form-control" id="state-input" placeholder="State" required>
+                    </div>
+                    <!-- <div class="col">
+                        <input type="text" class="form-control" id="zip-input" placeholder="Zip" required>
                     </div> -->
-                    <div class="form-group">
-                        <label>Event:</label>
-                        <select class="form-control form-control-lg" id="event-input">
-                            <option>music</option>
-                            <option>comedy</option>
-                            <option>sports</option>
-                            <option>random</option>
-                        </select>
+                </div>
 
-                        <label>When:</label>
-                        <select class="form-control form-control-lg" id="when-input">
-                            <option>today</option>
-                            <option>this weekend</option>
-                        </select>
-                    </div>
-                    <button class="btn btn--sm btn--blue" id="dinner-btn" onclick="window.location.href = 'respond.html'">Food</button>
-                    <button class="btn btn--sm btn--blue" id="movie-btn" onclick="window.location.href = 'respond.html'">Fun</button>
-                    <button class="btn btn--sm btn--blue" id="dinner-movie-btn" onclick="window.location.href = 'respond.html'">Food and Fun</button>
-                    <!-- old buttons -->
-                    <!-- <button type="submit" class="btn btn-outline-secondary" id="dinner-btn">Food</button>
-                    <button type="submit" class="btn btn-outline-secondary" id="movie-btn">Fun</button>
-                    <button type="submit" class="btn btn-outline-secondary" id="dinner-movie-btn">Food and Fun</button> -->
-                </form>
+                <label>Food:</label>
+                <select class="form-control form-control" id="food-type-input">
+                    <option>Sushi</option>
+                    <option>Italian</option>
+                    <option>Mexican</option>
+                    <option>Burgers</option>
+                    <option>Pizza</option>
+                    <option>Indian</option>
+                    <option>Mediterranean</option>
+                    <option>Seafood</option>
+                    <option>Steakhouse</option>
+                    <option>Chinese</option>
+                    <option>American</option>
+                </select>
+
+                <select class="form-control form-control" id="price-input">
+                    <option>$</option>
+                    <option>$$</option>
+                    <option>$$$</option>
+                    <option>$$$$</option>
+                </select>
+                <br>
+                <!-- <div class="form-check">
+                    <input class="form-check-input" type="radio" name="surprise" id="surprise-radiobtn" value="option1" checked>
+                    <label class="form-check-label">
+                        Choose the movie for me
+                    </label>
+                </div> -->
+                <div class="form-group">
+                    <label>Fun:</label>
+                    <select class="form-control form-control-lg" id="event-input">
+                        <option>music</option>
+                        <option>comedy</option>
+                        <option>sports</option>
+                        <option>outdoors</option>
+                        <option>performing arts</option>
+                    </select>
+
+                    <label>When:</label>
+                    <select class="form-control form-control-lg" id="when-input">
+                        <option>today</option>
+                        <option>this weekend</option>
+                    </select>
+                </div>
+                <button class="btn btn--sm btn--blue" id="dinner-btn">Food</button>
+                <button class="btn btn--sm btn--blue" id="movie-btn">Fun</button>
+                <button class="btn btn--sm btn--blue" id="dinner-movie-btn">Food and Fun</button>
+                <!-- old buttons -->
+                <!-- <button type="submit" class="btn btn-outline-secondary" id="dinner-btn">Food</button>
+                <button type="submit" class="btn btn-outline-secondary" id="movie-btn">Fun</button>
+                <button type="submit" class="btn btn-outline-secondary" id="dinner-movie-btn">Food and Fun</button> -->
+            </form>
+        </div>
+    </div>
+
+
+<!-- carousels to display results to page -->
+    <div class="container" id="carousel-container">
+        <div class="row" style="text-align:center; color:white">
+            <div class="col-md-12">
+                <h1>Results</h1>
+                <p>click on images for restaurant or event page</p>
             </div>
-        </section>
+        </div>
 
-        <!-- JS and jQuery scripts -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script type="text/javascript" src="assets/javascript/app.js"></script>
-    </body>
+        <div class="row">
+
+            <!-- yelp carousel -->
+            <div class="col-md-5 col-md-offset-1"> 
+                <div id="yelpCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <!-- <ol class="carousel-indicators">
+                    <li data-target="#yelpCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#yelpCarousel" data-slide-to="1"></li>
+                    <li data-target="#yelpCarousel" data-slide-to="2"></li>
+                    <li data-target="#yelpCarousel" data-slide-to="3"></li>
+                    <li data-target="#yelpCarousel" data-slide-to="4"></li>
+                    </ol> -->
+                
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                        <div class="item active" id="yelp-item-1">
+                        </div>
+                    
+                        <div class="item" id="yelp-item-2">
+                        </div>
+                        
+                        <div class="item" id="yelp-item-3">
+                        </div>
+
+                        <div class="item" id="yelp-item-4">
+                        </div>
+
+                        <div class="item" id="yelp-item-5">
+                         </div>
+                    </div>
+                
+                    <!-- Left and right controls -->
+                    <a class="left carousel-control" href="#yelpCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#yelpCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+
+            
+            <!-- eventful carousel -->
+            <div class="col-md-5"> 
+                <div id="eventfulCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <!-- <ol class="carousel-indicators">
+                    <li data-target="#eventfulCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#eventfulCarousel" data-slide-to="1"></li>
+                    <li data-target="#eventfulCarousel" data-slide-to="2"></li>
+                    <li data-target="#eventfulCarousel" data-slide-to="3"></li>
+                    <li data-target="#eventfulCarousel" data-slide-to="4"></li>
+                    </ol> -->
+                
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                        <div class="item active" id="eventful-item-1">
+                        </div>
+                    
+                        <div class="item" id="eventful-item-2">
+                        </div>
+                        
+                        <div class="item" id="eventful-item-3">
+                        </div>
+
+                        <div class="item" id="eventful-item-4">
+                        </div>
+
+                        <div class="item" id="eventful-item-5">
+                        </div>
+                    </div>
+                
+                    <!-- Left and right controls -->
+                    <a class="left carousel-control" href="#eventfulCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#eventfulCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <!-- try again button -->
+        <div class="row">
+                <div class="col-md-12" style="text-align:center">
+                        <button class="btn btn--md btn--blue" id="try-again-button">Try Again</button>
+                    </div>
+            </div>
+    </div>
+
+    
+
+    <!-- JS and jQuery scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+</body>
 
 </html>
