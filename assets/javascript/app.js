@@ -24,15 +24,20 @@ $(document).ready(function(){
       }
     }
     
+
     $.ajax(settings).done(function (response) {
-      console.log(response);
+      // console.log(response);
 
       // var yelpCarousel = $("<div class='item active'>");
 
       // added a loop to select specific targets within the object
       for(var i = 0; i < response.businesses.length; i++){
       
-      // storing value of 5 restaurant images in variables
+      // a lot of the code below is very redundant
+      // displaying the results while iterating through the array was how we initially returned the data,
+      // but for some reason it was breaking the carousel
+      // all the var's are ineffecient but it worked in the carousel, with little time we had to make it work for presentations
+
       // var restaurantImage = response.businesses[i].image_url;
       var restaurantImage1 = response.businesses[0].image_url;
       var restaurantImage2 = response.businesses[1].image_url;
@@ -40,7 +45,6 @@ $(document).ready(function(){
       var restaurantImage4 = response.businesses[3].image_url;
       var restaurantImage5 = response.businesses[4].image_url;
       
-      // storing value of 5 restaurant names in variables
       // var restaurantName = response.businesses[i].name;
       var restaurantName1 = response.businesses[0].name;
       var restaurantName2 = response.businesses[1].name;
@@ -48,7 +52,6 @@ $(document).ready(function(){
       var restaurantName4 = response.businesses[3].name;
       var restaurantName5 = response.businesses[4].name;
 
-      // storing value of 5 restaurant rating in variables
       // var restaurantRating = ("Rating: " + response.businesses[i].rating);
       var restaurantRating1 = ("Rating: " + response.businesses[0].rating + "/5");
       var restaurantRating2 = ("Rating: " + response.businesses[1].rating + "/5");
@@ -56,7 +59,6 @@ $(document).ready(function(){
       var restaurantRating4 = ("Rating: " + response.businesses[3].rating) + "/5";
       var restaurantRating5 = ("Rating: " + response.businesses[4].rating + "/5");
 
-      // storing value of 5 restaurant addresses in variables
       // var restaurantAddress = response.businesses[i].location.address1;
       var restaurantAddress1 = response.businesses[0].location.address1;
       var restaurantAddress2 = response.businesses[1].location.address1;
@@ -64,7 +66,6 @@ $(document).ready(function(){
       var restaurantAddress4 = response.businesses[3].location.address1;
       var restaurantAddress5 = response.businesses[4].location.address1;
       
-      // storing value of 5 restaurant yelp page urls in variables
       // var restaurantUrl = response.businesses[i].url;
       var restaurantUrl1 = response.businesses[0].url;
       var restaurantUrl2 = response.businesses[1].url;
